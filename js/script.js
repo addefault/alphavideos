@@ -3,6 +3,37 @@ $('.alphabet > span').each(function() {
 	$(this).data('top', $(this).position().top);
 });
 let letterIndex;
+$(window).on('resize',function(){
+		$('.alphabet > span').hide().each(function() {
+			$(this).css({
+				"top": "auto",
+				"left": "auto",
+				"position": "static"
+			}).show();
+		});
+		$('.alphabet > span').each(function() {
+			$(this).data('left', $(this).position().left);
+			$(this).data('top', $(this).position().top);
+			console.log($(this).find('i').text()+' left - '+$(this).data('left')+' top - '+$(this).data('top'));
+		});
+		$('.alphabet > span').each(function() {
+			$(this).css({
+				'top': $(this).data('top'),
+				'left': $(this).data('left'),
+				'position': 'absolute'
+			});
+			if($('.alphabet > span.selected').length) {
+				$(this).hide();
+			}
+			if($(this).hasClass('selected')) {
+				$(this).css({
+					"top": 0,
+					"left": 0,
+					"position": "absolute"
+				}).show();
+			}
+		})
+});
 $('.alphabet > span').click(function() {
 	letterIndex = $(this).index('span');
 	if(!$(this).hasClass('selected')) {
