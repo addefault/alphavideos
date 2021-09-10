@@ -87,7 +87,10 @@ $('.items > li').click(function() {
 			"top": selectedLetter.position().top+selectedLetter.height()+20,
 			"left": selectedLetter.position().left,
 		}).siblings().fadeOut(500);
-		$('.iteminner').html('<iframe width="100%" height="510" src="https://www.youtube.com/embed/DF6W1XD25Dc?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').show();
+		let iframeWidth = 510;
+		if($(window).height() < 640)
+			iframeWidth = 400;
+		$('.iteminner').html('<iframe width="100%" height="'+iframeWidth+'" src="https://www.youtube.com/embed/DF6W1XD25Dc?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').show();
 	}
 });
 $('.plans > div').click(function() {

@@ -37,6 +37,7 @@ p.copyright {
 	bottom: 45px;
 	left: 50%;
 	transform: translateX(-50%);
+	text-align: center;
 }
 div.alphabet {
 	width: 60%;
@@ -261,6 +262,11 @@ div.subscription-inner .plans > div > span {
 .btn.btn--gray {
 	background: #494949;
 }
+@media (max-height: 640px) {
+	div.information {
+		height: 400px;
+	}
+}
 @media (max-height: 580px) {
 	div.alphabet > span {
 		height: 145px;
@@ -276,19 +282,33 @@ div.subscription-inner .plans > div > span {
 		margin-top: 20px;
 	}
 }
+@media (max-height: 480px) {
+	div.information {
+		height: 310px;
+	}
+}
 @media (max-width: 1460px) {
 	div.alphabet {
 		width: 70%;
+	}
+	div.iteminner, div.information {
+		width: 85%;
 	}
 }
 @media (max-width: 1280px) {
 	div.alphabet {
 		width: 80%;
 	}
+	div.iteminner, div.information {
+		width: 78%;
+	}
 }
 @media (max-width: 1024px) {
 	div.alphabet {
 		width: 90%;
+	}
+	div.iteminner, div.information {
+		width: 70%;
 	}
 	ul.items {
 		font-size: 30px;
@@ -302,6 +322,11 @@ div.subscription-inner .plans > div > span {
 		font-size: 70px;
 		height: 120px;
 		line-height: 120px;
+	}
+}
+@media (max-width: 870px) {
+	div.subscription-inner {
+		padding: 30px 60px;
 	}
 }
 @media (max-width: 750px) {
@@ -322,6 +347,9 @@ div.subscription-inner .plans > div > span {
 	    top: 20px;
 	    left: 14%;
 	}
+	div.subscription-inner {
+		padding: 20px;
+	}
 }
 @media (max-width: 560px) {
 	ul.items {
@@ -341,6 +369,15 @@ div.subscription-inner .plans > div > span {
 	    top: 15px;
 	    left: 12%;
 	}
+	div.subscription-inner .plans > div {
+		margin: 1px 4px;
+	}
+	div.subscription-inner .plans > div:hover, div.subscription-inner .plans > div.selected {
+		margin: 0 3px;
+	}
+	.btn {
+		margin-top: 10px;
+	}
 }
 @media (max-width: 440px) {
 	div.alphabet > span {
@@ -350,6 +387,15 @@ div.subscription-inner .plans > div > span {
 	}
 	ul.items {
 	    font-size: 20px;
+	}
+	div.subscription-inner .plans > div > p {
+		font-size: 17px;
+	}
+	div.subscription-inner .plans > div > span {
+		font-size: 33px;
+	}
+	div.subscription-inner .plans > div {
+		width: 130px;
 	}
 }
 @media (max-width: 390px) {
