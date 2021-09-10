@@ -57,14 +57,23 @@ $('.alphabet > span').click(function() {
 		$('ul.items').eq(letterIndex).hide();
 		$('.information, .info-heading').hide();
 		$('.iteminner').html('').hide();
-		$('.alphabet > span').removeClass('selected hide').each(function() {
+		$(this).removeClass('selected hide').css({
+				'transition-property': 'top, left',
+				'transition-duration': '1s',
+				'left': $(this).data('left'),
+				'top': $(this).data('top')
+		}).siblings('span').removeClass('selected hide').each(function() {
+			let letterOrder = $(this).index('span') % 9;
+			let letterFade = 300;
+			if(letterOrder >= 3 && letterOrder <= 5)
+				letterFade = 800;
 			$(this).css({
 				'transition-property': 'top, left',
 				'transition-duration': '1s',
 				'left': $(this).data('left'),
 				'top': $(this).data('top')
-			});
-		}).fadeIn(300);	
+			}).hide().fadeIn(Math.round((letterFade-100) + Math.random() * ((letterFade+100) - (letterFade-100))));
+		});
 	}
 });
 $('.items > li').click(function() {
