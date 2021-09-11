@@ -3,6 +3,9 @@ $('.alphabet > span').each(function() {
 	$(this).data('top', $(this).position().top);
 });
 let letterIndex;
+let selectedTop = 0;
+if($(window).width() > 1280)
+	selectedTop = 100;
 $(window).on('resize',function(){
 		$('.alphabet > span').hide().each(function() {
 			$(this).css({
@@ -24,9 +27,11 @@ $(window).on('resize',function(){
 			if($('.alphabet > span.selected').length) {
 				$(this).hide();
 			}
+			if($(window).width() > 1280)
+				selectedTop = 100;
 			if($(this).hasClass('selected')) {
 				$(this).css({
-					"top": 0,
+					"top": selectedTop,
 					"left": 0,
 					"position": "absolute"
 				}).show();
@@ -65,12 +70,12 @@ $('.alphabet > span').click(function() {
 		$(this).css({
 			"transition-property": "top, left",
 			"transition-duration": "1s",
-			"top": 0,
+			"top": selectedTop,
 			"left": 0
 		});
 		if($(this).hasClass('info')) {
 			$('.info-heading').css({
-				'top': $('.alphabet > span.selected').height()+20,
+				'top': $('.alphabet > span.selected').height()+20+selectedTop,
 				'left': 0
 			}).fadeIn(2000);
 			$('.information').fadeIn(1000);
