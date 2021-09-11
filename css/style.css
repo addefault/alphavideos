@@ -144,7 +144,7 @@ ul.items {
 ul.items li {
 	width: 25%;
 	cursor: pointer;
-	margin: 6px 0;
+	margin: 2px 0;
 	padding: 0 20px;
 	box-sizing: border-box;
 	color: #fff;
@@ -344,6 +344,9 @@ div.subscription-inner .plans > div > span {
 		font-size: 70px;
 		height: 120px;
 		line-height: 120px;
+	}
+	ul.items li {
+		margin: 6px 0;
 	}
 }
 @media (max-width: 870px) {
