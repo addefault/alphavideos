@@ -175,6 +175,9 @@ div.iteminner, div.information {
 div.iteminner {
     width: 80vw;
 }
+div.iteminner video {
+    height: 45vw;
+}
 div.information {
 	font-size: 16px;
 	color: #fff;
