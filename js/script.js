@@ -14,7 +14,6 @@ $(window).on('resize',function(){
 		$('.alphabet > span').each(function() {
 			$(this).data('left', $(this).position().left);
 			$(this).data('top', $(this).position().top);
-			console.log($(this).find('i').text()+' left - '+$(this).data('left')+' top - '+$(this).data('top'));
 		});
 		$('.alphabet > span').each(function() {
 			$(this).css({
@@ -95,15 +94,22 @@ $('.alphabet > span').click(function() {
 				'top': $(this).data('top')
 		}).siblings('span').removeClass('selected hide').each(function() {
 			let letterOrder = $(this).index('span') % 9;
-			let letterFade = 300;
-			if(letterOrder >= 3 && letterOrder <= 5)
+			let letterDelay = 100;
+			let letterFade = 600;
+			let letterThis = $(this);
+			if((letterOrder >= 2 && letterOrder <= 4) || (letterOrder == 7 || letterOrder == 8)) {
 				letterFade = 800;
-			$(this).css({
+				letterDelay = 200;
+			}
+			letterThis.css({
 				'transition-property': 'top, left',
 				'transition-duration': '1s',
 				'left': $(this).data('left'),
 				'top': $(this).data('top')
-			}).hide().fadeIn(Math.round((letterFade-100) + Math.random() * ((letterFade+100) - (letterFade-100))));
+			}).hide();
+			setTimeout(function() {
+				letterThis.fadeIn(letterFade);
+			}, letterDelay);
 		});
 	}
 });
