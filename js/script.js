@@ -133,7 +133,7 @@ $('.items > li').click(function() {
 		$(this).parent().css('position', 'static');
 		$(this).addClass('selected').css({
 			"position": "absolute",
-			"top": selectedLetter.position().top+selectedLetter.height()+20,
+			"top": selectedLetter.position().top+selectedLetter.height()+60,
 			"left": selectedLetter.position().left,
 		}).siblings().fadeOut(500);
 		let iframeWidth = 510;
