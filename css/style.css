@@ -167,16 +167,13 @@ ul.items li:not(.selected):hover {
 }
 div.iteminner, div.information {
 	display: none;
-	width: 100%;
+	width: 60vw;
 	position: absolute;
 	top: 0;
 	left: 20%;
 }
-div.iteminner {
-    width: 80vw;
-}
 div.iteminner video {
-    height: 45vw;
+	height: 34vw;
 }
 div.information {
 	font-size: 16px;
