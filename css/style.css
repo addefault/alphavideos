@@ -118,11 +118,11 @@ div.alphabet > span.selected > i:before {
 	z-index: -1;
 	display: block;
 	width: 105%;
-	height: 105%;
-	top: -2.5%;
+	height: 110%;
+	top: -5%;
 	left: -2.5%;
 	background: #fff;
-	box-shadow: -25px 25px 45px 0px rgba(0, 0, 0, .29);
+	box-shadow: -25px 25px 20px 0px rgba(0, 0, 0, .3);
 	border-radius: 15px;
 }
 div.alphabet > span:last-of-type,
