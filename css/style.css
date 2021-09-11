@@ -59,7 +59,6 @@ div.alphabet > span {
 	display: inline-block;
 	width: 11%;
 	height: 145px;
-	border-radius: 15px;
 	line-height: 145px;
 	flex-shrink: 0;
 	transition-property: background-color, color, top, left;
@@ -69,6 +68,7 @@ div.alphabet > span {
 div.alphabet > span > i {
 	font-style: normal;
 	display: block;
+	position: relative;
 }
 @keyframes delayAnimate1 {
 	0% {
@@ -109,9 +109,21 @@ div.alphabet > span.checked {
 }
 div.alphabet > span:not(.hide):hover,
 div.alphabet > span.selected {
-	background-color: #fff;
 	color: #000;
+}
+div.alphabet > span:not(.hide):hover > i:before,
+div.alphabet > span.selected > i:before {
+	position: absolute;
+	content: "";
+	z-index: -1;
+	display: block;
+	width: 105%;
+	height: 105%;
+	top: -2.5%;
+	left: -2.5%;
+	background: #fff;
 	box-shadow: -25px 25px 45px 0px rgba(0, 0, 0, .29);
+	border-radius: 15px;
 }
 div.alphabet > span:last-of-type,
 div.alphabet > span:last-of-type:hover {
@@ -294,11 +306,10 @@ div.subscription-inner .plans > div > span {
 }
 @media (min-width: 1366px) {
 	div.alphabet {
-		width: 1144px;
+		width: 1080px;
 	}
 	div.alphabet > span {
-		width: 125px;
-		margin-right: 2px;
+		width: 120px;
 	}
 }
 @media (max-width: 1280px) {
