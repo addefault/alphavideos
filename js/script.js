@@ -121,6 +121,13 @@ $('.alphabet > span').click(function() {
 $('.items > li').click(function() {
 	if($(this).hasClass('disabled')) {
 		$('.subscription').css("display", "flex").hide().fadeIn();
+	} else if($(this).hasClass('selected')) {
+		$('.iteminner').html('').hide();
+		$(this).removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
+			"position": "static",
+			"top": "auto",
+			"left": "auto",
+		}).fadeIn(600);
 	} else {
 		let selectedLetter = $('.alphabet > span.selected');
 		$(this).parent().css('position', 'static');
