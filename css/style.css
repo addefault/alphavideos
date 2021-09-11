@@ -312,6 +312,11 @@ div.subscription-inner .plans > div > span {
 		width: 120px;
 	}
 }
+@media (min-width: 1280px) {
+	ul.items {
+		top: 150px;
+	}
+}
 @media (max-width: 1280px) {
 	div.alphabet {
 		width: 80%;
