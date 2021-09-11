@@ -132,7 +132,7 @@ $('.items > li').click(function() {
 		let iframeWidth = 510;
 		if($(window).height() < 640)
 			iframeWidth = 400;
-		$('.iteminner').html('<video controls autoplay width="100%" height="510"><source src="design.mp4" type="video/mp4"></video>').show();
+		$('.iteminner').html('<video src="design.mp4" controls autoplay></video>').show();
 	}
 });
 $('.plans > div').click(function() {
