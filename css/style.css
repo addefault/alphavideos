@@ -288,11 +288,16 @@ div.subscription-inner .plans > div > span {
 	}
 }
 @media (max-width: 1460px) {
-	div.alphabet {
-		width: 70%;
-	}
 	div.iteminner, div.information {
 		width: 85%;
+	}
+}
+@media (min-width: 1366px) {
+	div.alphabet {
+		width: 1125px;
+	}
+	div.alphabet > span {
+		width: 125px;
 	}
 }
 @media (max-width: 1280px) {
