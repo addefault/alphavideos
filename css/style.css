@@ -275,7 +275,7 @@ div.subscription-inner .plans > div > span {
 	background: #494949;
 }
 @media (max-height: 640px) {
-	div.information {
+	div.information, div.iteminner video {
 		height: 400px;
 	}
 }
@@ -295,11 +295,16 @@ div.subscription-inner .plans > div > span {
 	}
 }
 @media (max-height: 480px) {
-	div.information {
+	div.information, div.iteminner video {
 		height: 310px;
 	}
 }
-@media (max-width: 1460px) {
+@media (max-width: 1720px) {
+	div.iteminner, div.information {
+		width: 90%;
+	}
+}
+@media (max-width: 1500px) {
 	div.iteminner, div.information {
 		width: 85%;
 	}

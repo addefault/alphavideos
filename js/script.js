@@ -132,7 +132,7 @@ $('.items > li').click(function() {
 		let iframeWidth = 510;
 		if($(window).height() < 640)
 			iframeWidth = 400;
-		$('.iteminner').html('<iframe width="100%" height="'+iframeWidth+'" src="https://www.youtube.com/embed/DF6W1XD25Dc?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').show();
+		$('.iteminner').html('<video controls autoplay width="100%" height="510"><source src="design.mp4" type="video/mp4"></video>').show();
 	}
 });
 $('.plans > div').click(function() {
