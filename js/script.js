@@ -140,6 +140,14 @@ $('.items > li').click(function() {
 		if($(window).height() < 640)
 			iframeWidth = 400;
 		$('.iteminner').html('<video src="design.mp4" autoplay width="100%"></video>').show();
+		$('video').on("ended", function(){
+			$('.iteminner').html('').hide();
+			$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
+				"position": "static",
+				"top": "auto",
+				"left": "auto",
+			}).fadeIn(600);
+		});
 	}
 });
 $('.plans > div').click(function() {
