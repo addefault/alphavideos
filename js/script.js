@@ -55,7 +55,21 @@ $('.alphabet > span').click(function() {
 		});
 		$('.alphabet > span').css('position', 'absolute');
 		let innerSym = $(this).children('i');
-		innerSym.css("animation", "delayAnimate"+(Math.floor($(this).index('span')/9)+1)+" 1.2s ease-in-out");
+		if(letterIndex === 0)
+			delayType = 1;
+		else if(letterIndex >= 1 && letterIndex <= 8)
+			delayType = 2;
+		else if(letterIndex === 9 || letterIndex === 18)
+			delayType = 3;
+		else if(letterIndex === 10 || letterIndex === 11)
+			delayType = 4;
+		else if(letterIndex === 19 || letterIndex === 20)
+			delayType = 5;
+		else if(letterIndex >= 12 && letterIndex <= 17)
+			delayType = 6;
+		else if(letterIndex >= 21 && letterIndex <= 26)
+			delayType = 7;
+		innerSym.css("animation", "delayAnimate"+delayType+" 1.2s ease-in-out");
 		setTimeout(function() {
 			innerSym.css("animation", "none");
 		}, 1200);
