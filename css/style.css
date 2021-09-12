@@ -75,12 +75,15 @@ div.alphabet > span > i {
 @keyframes delayAnimate1 {
 	0% {
 		padding-left: 0;
+		padding-top: 0;
 	}
-	20% {
+	30% {
 		padding-left: 20px;
+		padding-top: 10px;
 	}
 	100% {
 		padding-left: 0;
+		padding-top: 0;
 	}
 }
 @keyframes delayAnimate2 {
