@@ -114,14 +114,20 @@ $('.alphabet > span').click(function() {
 				'left': $(this).data('left'),
 				'top': $(this).data('top')
 		}).siblings('span').removeClass('selected hide').each(function() {
-			let letterOrder = $(this).index('span') % 9;
-			let letterDelay = 100;
+			let letterOrder = $(this).index('span');
+			let letterDelay = 2000;
 			let letterFade = 600;
 			let letterThis = $(this);
-			if((letterOrder >= 2 && letterOrder <= 4) || (letterOrder == 7 || letterOrder == 8)) {
-				letterFade = 800;
-				letterDelay = 200;
-			}
+			if(letterOrder === 1 || letterOrder === 9 || letterOrder === 14)
+				letterDelay = 100;
+			else if(letterOrder === 2 || letterOrder === 5 || letterOrder === 10 || letterOrder || 15)
+				letterDelay = 300;
+			else if(letterOrder === 3 || letterOrder === 11 || letterOrder === 6 || letterOrder === 16)
+				letterDelay = 500;
+			else if(letterOrder === 4 || letterOrder === 7 || letterOrder === 12)
+				letterDelay = 700;
+			else if(letterOrder === 8 || letterOrder === 13 || letterOrder === 0)
+				letterDelay = 900;
 			letterThis.css({
 				'transition-property': 'top, left',
 				'transition-duration': '1s',
