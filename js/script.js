@@ -55,8 +55,10 @@ $('.alphabet > span').click(function() {
 		});
 		$('.alphabet > span').css('position', 'absolute');
 		let innerSym = $(this).children('i');
-		if(letterIndex === 0 || letterIndex === 1)
+		if(letterIndex === 0)
 			delayType = 1;
+		else if(letterIndex === 1)
+			delayType = 0;
 		else if(letterIndex > 1 && letterIndex <= 8)
 			delayType = 2;
 		else if(letterIndex === 9 || letterIndex === 18)
