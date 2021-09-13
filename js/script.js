@@ -197,10 +197,14 @@ $('.items > li').click(function() {
 	} else {
 		let selectedLetter = $('.alphabet > span.selected');
 		$(this).parent().css('position', 'static');
+		let selectedOffset = 50;
+		if($(window).width() < 1024) {
+			selectedOffset = 20;
+		}
 		$(this).addClass('selected').css({
 			"position": "absolute",
-			"top": selectedLetter.position().top+selectedLetter.height()+50,
-			"left": selectedLetter.position().left,
+			"top": selectedTop+selectedLetter.height()+selectedOffset,
+			"left": 0,
 		}).siblings().fadeOut(600);
 		let iframeWidth = 510;
 		if($(window).height() < 640)
