@@ -182,12 +182,12 @@ div.alphabet > span.checked {
 	top: 0 !important;
 	left: 0 !important;
 }
-div.alphabet > span:not(.hide):hover,
-div.alphabet > span.selected {
+div.alphabet > span.selected,
+div.alphabet > span.hover {
 	color: #000;
 }
-div.alphabet > span:not(.hide):hover > i:before,
-div.alphabet > span.selected > i:before {
+div.alphabet > span.selected > i:before,
+div.alphabet > span.hover > i:before {
 	position: absolute;
 	content: "";
 	z-index: -1;

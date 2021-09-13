@@ -38,6 +38,11 @@ $(window).on('resize',function(){
 			}
 		})
 });
+$('.alphabet > span').mouseenter(function() {
+	if(!$(this).hasClass('selected') && !$(this).hasClass('hide') && !$(this).hasClass('hover')) {
+		$(this).addClass('hover').siblings('span.hover').removeClass('hover');
+	}
+});
 $('.alphabet > span').click(function() {
 	letterIndex = $(this).index('span');
 	if(!$(this).hasClass('selected')) {
@@ -125,13 +130,13 @@ $('.alphabet > span').click(function() {
 			let letterThis = $(this);
 			if(letterOrder === 1 || letterOrder === 9 || letterOrder === 14 || letterOrder === 19)
 				letterDelay = 100;
-			else if(letterOrder === 2 || letterOrder === 5 || letterOrder === 10 || letterOrder === 15 || letterOrder === 20 || letterOrder === 23)
+			else if(letterOrder === 2 || letterOrder === 5 || letterOrder === 10 || letterOrder === 15 || letterOrder === 20 || letterOrder === 23 || letterOrder === 0 || letterOrder === 18)
 				letterDelay = 300;
 			else if(letterOrder === 3 || letterOrder === 11 || letterOrder === 6 || letterOrder === 16 || letterOrder === 21 || letterOrder === 24)
 				letterDelay = 500;
 			else if(letterOrder === 4 || letterOrder === 7 || letterOrder === 12 || letterOrder === 17 || letterOrder === 22 || letterOrder === 25)
 				letterDelay = 700;
-			else if(letterOrder === 8 || letterOrder === 13 || letterOrder === 0 || letterOrder === 18 || letterOrder === 26)
+			else if(letterOrder === 8 || letterOrder === 13 || letterOrder === 26)
 				letterDelay = 900;
 			letterThis.css({
 				'transition-property': 'top, left',
@@ -149,7 +154,7 @@ $('.items > li').click(function() {
 	if($(this).hasClass('disabled')) {
 		$('.subscription').css("display", "flex").hide().fadeIn();
 	} else if($(this).hasClass('selected')) {
-		$('.iteminner').html('').hide();
+		$('.iteminner').html('').fadeOut(600);
 		$(this).removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
 			"position": "static",
 			"top": "auto",
@@ -162,11 +167,11 @@ $('.items > li').click(function() {
 			"position": "absolute",
 			"top": selectedLetter.position().top+selectedLetter.height()+50,
 			"left": selectedLetter.position().left,
-		}).siblings().fadeOut(500);
+		}).siblings().fadeOut(600);
 		let iframeWidth = 510;
 		if($(window).height() < 640)
 			iframeWidth = 400;
-		$('.iteminner').html('<video src="design.mp4" autoplay width="100%"></video>').show();
+		$('.iteminner').html('<video src="design.mp4" autoplay width="100%"></video>').fadeIn(600);
 		$('video').on("ended", function(){
 			$('.iteminner').html('').hide();
 			$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
