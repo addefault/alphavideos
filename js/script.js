@@ -6,7 +6,7 @@ let letterIndex;
 let selectedTop = 0;
 if($(window).width() > 1280)
 	selectedTop = 100;
-$(window).on('resize',function(){
+/*$(window).on('resize',function(){
 		$('.alphabet > span').hide().each(function() {
 			$(this).css({
 				"top": "auto",
@@ -37,7 +37,7 @@ $(window).on('resize',function(){
 				}).show();
 			}
 		})
-});
+});*/
 $('.alphabet > span').mouseenter(function() {
 	if(!$(this).hasClass('selected') && !$(this).hasClass('hide') && !$(this).hasClass('hover')) {
 		$(this).addClass('hover').siblings('span.hover').removeClass('hover');
