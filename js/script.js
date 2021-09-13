@@ -108,25 +108,30 @@ $('.alphabet > span').click(function() {
 		$('ul.items').eq(letterIndex).hide();
 		$('.information, .info-heading').hide();
 		$('.iteminner').html('').hide();
-		$(this).removeClass('selected hide').css({
+		const currentLetter = $(this);
+		currentLetter.css({
 				'transition-property': 'top, left',
 				'transition-duration': '1s',
 				'left': $(this).data('left'),
 				'top': $(this).data('top')
-		}).siblings('span').removeClass('selected hide').each(function() {
+		});
+		setTimeout(function() {
+			currentLetter.removeClass('selected').siblings('span').removeClass('hide');
+		}, 1000);
+		currentLetter.siblings('span').each(function() {
 			let letterOrder = $(this).index('span');
-			let letterDelay = 2000;
+			let letterDelay = 100;
 			let letterFade = 600;
 			let letterThis = $(this);
-			if(letterOrder === 1 || letterOrder === 9 || letterOrder === 14)
+			if(letterOrder === 1 || letterOrder === 9 || letterOrder === 14 || letterOrder === 19)
 				letterDelay = 100;
-			else if(letterOrder === 2 || letterOrder === 5 || letterOrder === 10 || letterOrder || 15)
+			else if(letterOrder === 2 || letterOrder === 5 || letterOrder === 10 || letterOrder === 15 || letterOrder === 20 || letterOrder === 23)
 				letterDelay = 300;
-			else if(letterOrder === 3 || letterOrder === 11 || letterOrder === 6 || letterOrder === 16)
+			else if(letterOrder === 3 || letterOrder === 11 || letterOrder === 6 || letterOrder === 16 || letterOrder === 21 || letterOrder === 24)
 				letterDelay = 500;
-			else if(letterOrder === 4 || letterOrder === 7 || letterOrder === 12)
+			else if(letterOrder === 4 || letterOrder === 7 || letterOrder === 12 || letterOrder === 17 || letterOrder === 22 || letterOrder === 25)
 				letterDelay = 700;
-			else if(letterOrder === 8 || letterOrder === 13 || letterOrder === 0)
+			else if(letterOrder === 8 || letterOrder === 13 || letterOrder === 0 || letterOrder === 18 || letterOrder === 26)
 				letterDelay = 900;
 			letterThis.css({
 				'transition-property': 'top, left',
@@ -136,6 +141,7 @@ $('.alphabet > span').click(function() {
 			}).hide();
 			setTimeout(function() {
 				letterThis.fadeIn(letterFade);
+				console.log('it was '+letterDelay);
 			}, letterDelay);
 		});
 	}
