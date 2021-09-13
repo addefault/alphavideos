@@ -141,7 +141,6 @@ $('.alphabet > span').click(function() {
 			}).hide();
 			setTimeout(function() {
 				letterThis.fadeIn(letterFade);
-				console.log('it was '+letterDelay);
 			}, letterDelay);
 		});
 	}
