@@ -565,8 +565,18 @@ div.subscription-inner .plans > div > span {
 	}
 }
 @media only screen and (orientation:portrait) {
+	html {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 	body {
 		height: 100vw;
+		width: 80vh;
 		transform: rotate(90deg);
+		flex-shrink: 0;
+	}
+	p.copyright {
+		font-size: 11px;
 	}
 }
