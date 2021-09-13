@@ -1,12 +1,29 @@
-$('.alphabet > span').each(function() {
-	$(this).data('left', $(this).position().left);
-	$(this).data('top', $(this).position().top);
-});
+if(screen.availHeight > screen.availWidth) {
+	let leftOffsets = [];
+	$('.alphabet > span').each(function() {
+		if(leftOffsets.length < 9 && leftOffsets[leftOffsets.length-1] != $(this).position().left)
+			leftOffsets.push($(this).position().left);
+		$(this).data('left', $(this).position().top);
+	});
+	$('.alphabet > span').each(function() {
+		let letterLeftOffset = 0;
+		if($(this).index() <= 8)
+			letterLeftOffset = 2;
+		else if($(this).index() <= 17)
+			letterLeftOffset = 1;
+		$(this).data('top', leftOffsets[letterLeftOffset]);
+	});
+} else {
+	$('.alphabet > span').each(function() {
+		$(this).data('left', $(this).position().left);
+		$(this).data('top', $(this).position().top);
+	});	
+}
 let letterIndex;
 let selectedTop = 0;
 if($(window).width() > 1280)
 	selectedTop = 100;
-/*$(window).on('resize',function(){
+$(window).on('resize',function(){
 		$('.alphabet > span').hide().each(function() {
 			$(this).css({
 				"top": "auto",
@@ -14,10 +31,27 @@ if($(window).width() > 1280)
 				"position": "static"
 			}).show();
 		});
-		$('.alphabet > span').each(function() {
-			$(this).data('left', $(this).position().left);
-			$(this).data('top', $(this).position().top);
-		});
+		if(screen.availHeight > screen.availWidth) {
+			let leftOffsets = [];
+			$('.alphabet > span').each(function() {
+				if(leftOffsets.length < 9 && leftOffsets[leftOffsets.length-1] != $(this).position().left)
+					leftOffsets.push($(this).position().left);
+				$(this).data('left', $(this).position().top);
+			});
+			$('.alphabet > span').each(function() {
+				let letterLeftOffset = 0;
+				if($(this).index() <= 8)
+					letterLeftOffset = 2;
+				else if($(this).index() <= 17)
+					letterLeftOffset = 1;
+				$(this).data('top', leftOffsets[letterLeftOffset]);
+			});
+		} else {
+			$('.alphabet > span').each(function() {
+				$(this).data('left', $(this).position().left);
+				$(this).data('top', $(this).position().top);
+			});	
+		}
 		$('.alphabet > span').each(function() {
 			$(this).css({
 				'top': $(this).data('top'),
@@ -37,7 +71,7 @@ if($(window).width() > 1280)
 				}).show();
 			}
 		})
-});*/
+});
 $('.alphabet > span').mouseenter(function() {
 	if(!$(this).hasClass('selected') && !$(this).hasClass('hide') && !$(this).hasClass('hover')) {
 		$(this).addClass('hover').siblings('span.hover').removeClass('hover');

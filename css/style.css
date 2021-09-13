@@ -579,4 +579,7 @@ div.subscription-inner .plans > div > span {
 	p.copyright {
 		font-size: 11px;
 	}
+	div.iteminner video {
+		height: 34vh;
+	}
 }
