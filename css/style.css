@@ -225,6 +225,10 @@ ul.items li {
 	box-sizing: border-box;
 	color: #fff;
 	text-shadow: 6px 6px 4px rgba(0, 0, 0, .4);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ul.items li.selected {
+	transition: top .3s ease-in, left .3s ease-in;
 }
 .info-heading {
 	font-family: "Bague";
@@ -237,9 +241,6 @@ ul.items li {
 }
 ul.items li.disabled {
 	color: #7f7f7f;
-}
-ul.items li:not(.selected):hover {
-	color: #29b000;
 }
 div.iteminner, div.information {
 	display: none;
@@ -410,6 +411,11 @@ div.subscription-inner .plans > div > span {
 	}
 	div.iteminner, div.information {
 		width: 78%;
+	}
+}
+@media (min-width: 1024px) {
+	ul.items li:not(.selected):hover {
+		color: #29b000;
 	}
 }
 @media (max-width: 1024px) {

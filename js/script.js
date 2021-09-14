@@ -189,23 +189,43 @@ $('.items > li').click(function() {
 		$('.subscription').css("display", "flex").hide().fadeIn();
 	} else if($(this).hasClass('selected')) {
 		$('.iteminner').html('').fadeOut(600);
-		$(this).removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
-			"position": "static",
-			"top": "auto",
-			"left": "auto",
-		}).fadeIn(600);
+		$(this).css({
+			"top": $(this).data('top')+$(this).parent().data('top'),
+			"left": $(this).data('left')+$(this).parent().data('left'),
+		}).siblings().fadeIn(600);
+
+		setTimeout(function() {
+			$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').css({
+				"position": "static",
+				"top": "auto",
+				"left": "auto"
+			});
+		}, 600);
 	} else {
 		let selectedLetter = $('.alphabet > span.selected');
-		$(this).parent().css('position', 'static');
 		let selectedOffset = 50;
 		if($(window).width() < 1024) {
 			selectedOffset = 20;
 		}
+		$('.items > li').each(function() {
+			$(this).data('top', $(this).position().top);
+			$(this).data('left', $(this).position().left);
+		});
+		$(this).parent().data('top', $(this).parent().position().top);
+		$(this).parent().data('left', $(this).parent().position().left);
+		$('.items > li').each(function() {
+			$(this).css({
+				"position": "absolute",
+				"top": $(this).data('top')+$(this).parent().position().top,
+				"left": $(this).data('left')+$(this).parent().position().left,
+			});
+		});
+		$(this).parent().css('position', 'static');
 		$(this).addClass('selected').css({
-			"position": "absolute",
 			"top": selectedTop+selectedLetter.height()+selectedOffset,
-			"left": 0,
+			"left": -20,
 		}).siblings().fadeOut(600);
+
 		let iframeWidth = 510;
 		if($(window).height() < 640)
 			iframeWidth = 400;
