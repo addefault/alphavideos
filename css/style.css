@@ -395,7 +395,7 @@ div.subscription-inner .plans > div > span {
 }
 @media (max-width: 1024px) {
 	div.alphabet {
-		width: 60%;
+		width: 63%;
 	}
 	ul.items {
 		font-size: 30px;
@@ -406,23 +406,23 @@ div.subscription-inner .plans > div > span {
 }
 @media (max-width: 920px) {
 	div.alphabet > span {
-		font-size: 34px;
-		height: 55px;
-		line-height: 55px;
+		font-size: 42px;
+		height: 60px;
+		line-height: 60px;
 	}
 	div.alphabet > span > i {
-		height: 55px;
+		height: 60px;
 	}
 	ul.items li {
 		margin: 6px 0;
 	}
 	ul.items {
-	    font-size: 18px;
+	    font-size: 21px;
 	    top: 15px;
 	    left: 12%;
 	}
 	p.copyright {
-		font-size: 11px;
+		font-size: 12px;
 	}
 }
 @media (max-width: 870px) {
@@ -450,7 +450,7 @@ div.subscription-inner .plans > div > span {
 		padding: 20px;
 	}
 	ul.items {
-	    width: 80%;
+	    width: 82%;
 	}
 }
 @media (max-width: 560px) {
