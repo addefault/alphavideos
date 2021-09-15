@@ -227,9 +227,6 @@ ul.items li {
 	text-shadow: 6px 6px 4px rgba(0, 0, 0, .4);
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-ul.items li.selected {
-	transition: top .3s ease-in, left .3s ease-in;
-}
 .info-heading {
 	font-family: "Bague";
 	font-size: 35px;
@@ -354,11 +351,6 @@ div.subscription-inner .plans > div > span {
 .btn.btn--gray {
 	background: #494949;
 }
-@media (max-height: 640px) {
-	div.information, div.iteminner video {
-		height: 400px;
-	}
-}
 @media (max-height: 580px) {
 	div.alphabet > span {
 		height: 145px;
@@ -375,21 +367,6 @@ div.subscription-inner .plans > div > span {
 	}
 	.alphabet {
 		margin-top: 20px;
-	}
-}
-@media (max-height: 480px) {
-	div.information, div.iteminner video {
-		height: 310px;
-	}
-}
-@media (max-width: 1720px) {
-	div.iteminner, div.information {
-		width: 90%;
-	}
-}
-@media (max-width: 1500px) {
-	div.iteminner, div.information {
-		width: 85%;
 	}
 }
 @media (min-width: 1366px) {
@@ -409,9 +386,6 @@ div.subscription-inner .plans > div > span {
 	div.alphabet {
 		width: 80%;
 	}
-	div.iteminner, div.information {
-		width: 78%;
-	}
 }
 @media (min-width: 1024px) {
 	ul.items li:not(.selected):hover {
@@ -421,9 +395,6 @@ div.subscription-inner .plans > div > span {
 @media (max-width: 1024px) {
 	div.alphabet {
 		width: 60%;
-	}
-	div.iteminner, div.information {
-		width: 70%;
 	}
 	ul.items {
 		font-size: 30px;
@@ -446,7 +417,6 @@ div.subscription-inner .plans > div > span {
 	}
 	ul.items {
 	    font-size: 18px;
-	    width: 85%;
 	    top: 15px;
 	    left: 12%;
 	}
@@ -478,12 +448,18 @@ div.subscription-inner .plans > div > span {
 	div.subscription-inner {
 		padding: 20px;
 	}
+	ul.items {
+	    width: 80%;
+	}
 }
 @media (max-width: 560px) {
 	/*ul.items {
 	    font-size: 25px;
 	    width: 90%;
 	}*/
+	div.alphabet {
+	    width: 70%;
+	}
 }
 @media (max-width: 510px) {
 	/*div.alphabet > span {
@@ -510,6 +486,11 @@ div.subscription-inner .plans > div > span {
 		margin-top: 10px;
 	}
 }
+@media (max-width: 470px) {
+	div.alphabet {
+	    width: 80%;
+	}
+}
 @media (max-width: 440px) {
 	/*div.alphabet > span {
 		font-size: 41px;
@@ -530,6 +511,11 @@ div.subscription-inner .plans > div > span {
 	}
 	div.subscription-inner .plans > div {
 		width: 130px;
+	}
+}
+@media (max-width: 420px) {
+	div.alphabet {
+	    width: 90%;
 	}
 }
 @media (max-width: 390px) {
@@ -589,6 +575,9 @@ div.subscription-inner .plans > div > span {
 	}
 	p.copyright {
 		font-size: 11px;
+	}
+	div.iteminner, div.information {
+		width: 60vh;
 	}
 	div.iteminner video {
 		height: 34vh;

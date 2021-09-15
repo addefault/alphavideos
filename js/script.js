@@ -189,10 +189,10 @@ $('.items > li').click(function() {
 		$('.subscription').css("display", "flex").hide().fadeIn();
 	} else if($(this).hasClass('selected')) {
 		$('.iteminner').html('').fadeOut(600);
-		$(this).css({
+		$(this).hide().css({
 			"top": $(this).data('top')+$(this).parent().data('top'),
 			"left": $(this).data('left')+$(this).parent().data('left'),
-		}).siblings().fadeIn(600);
+		}).fadeIn(600).siblings().fadeIn(600);
 
 		setTimeout(function() {
 			$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').css({
@@ -204,8 +204,10 @@ $('.items > li').click(function() {
 	} else {
 		let selectedLetter = $('.alphabet > span.selected');
 		let selectedOffset = 50;
+		let selectedOffsetLeft = 0;
 		if($(window).width() < 1024) {
 			selectedOffset = 20;
+			selectedOffsetLeft = -20;
 		}
 		$('.items > li').each(function() {
 			$(this).data('top', $(this).position().top);
@@ -221,10 +223,10 @@ $('.items > li').click(function() {
 			});
 		});
 		$(this).parent().css('position', 'static');
-		$(this).addClass('selected').css({
+		$(this).addClass('selected').hide().css({
 			"top": selectedTop+selectedLetter.height()+selectedOffset,
 			"left": -20,
-		}).siblings().fadeOut(600);
+		}).fadeIn(600).siblings().fadeOut(600);
 
 		let iframeWidth = 510;
 		if($(window).height() < 640)
