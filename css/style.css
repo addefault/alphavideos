@@ -248,6 +248,7 @@ div.iteminner, div.information {
 }
 div.iteminner video {
 	height: 34vw;
+	max-height: 80vh;
 }
 div.information {
 	font-size: 16px;
@@ -581,5 +582,6 @@ div.subscription-inner .plans > div > span {
 	}
 	div.iteminner video {
 		height: 34vh;
+		max-height: 70vw;
 	}
 }
