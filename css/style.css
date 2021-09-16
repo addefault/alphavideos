@@ -55,12 +55,12 @@ div.alphabet {
 div.alphabet > span {
 	font-family: "Bague";
 	color: #fff;
-	font-size: 95px;
+	font-size: 86px;
 	text-shadow: 9px 12px 4px rgba(0, 0, 0, .45);
 	display: inline-block;
 	width: 11%;
-	height: 145px;
-	line-height: 145px;
+	height: 130px;
+	line-height: 130px;
 	flex-shrink: 0;
 	transition-property: background-color, color, top, left;
 	transition-duration: .2s;
@@ -71,7 +71,7 @@ div.alphabet > span > i {
 	display: block;
 	position: relative;
 	box-sizing: border-box;
-	height: 145px;
+	height: 130px;
 }
 @keyframes delayAnimate0 {
 	0% {
@@ -354,11 +354,11 @@ div.subscription-inner .plans > div > span {
 }
 @media (max-height: 580px) {
 	div.alphabet > span {
-		height: 145px;
-		line-height: 145px;
+		height: 130px;
+		line-height: 130px;
 	}
 	div.alphabet > span > i {
-		height: 145px;
+		height: 130px;
 	}
 	p.copyright {
 		bottom: 20px;
@@ -375,7 +375,7 @@ div.subscription-inner .plans > div > span {
 		width: 1080px;
 	}
 	div.alphabet > span {
-		width: 120px;
+		width: 110px;
 	}
 }
 @media (min-width: 1280px) {
@@ -406,24 +406,24 @@ div.subscription-inner .plans > div > span {
 }
 @media (max-width: 920px) {
 	div.alphabet > span {
-		font-size: 42px;
-		height: 60px;
-		line-height: 60px;
+		font-size: 38px;
+		height: 55px;
+		line-height: 55px;
 		text-shadow: 6px 6px 4px rgba(0, 0, 0, .45);
 	}
 	div.alphabet > span > i {
-		height: 60px;
+		height: 55px;
 	}
 	ul.items li {
 		margin: 6px 0;
 	}
 	ul.items {
-	    font-size: 21px;
+	    font-size: 19px;
 	    top: 15px;
 	    left: 15%;
 	}
 	p.copyright {
-		font-size: 12px;
+		font-size: 15px;
 	}
 }
 @media (max-width: 870px) {
