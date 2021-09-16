@@ -414,6 +414,10 @@ div.subscription-inner .plans > div > span {
 	div.alphabet > span > i {
 		height: 60px;
 	}
+	div.alphabet > span.selected > i:before,
+	div.alphabet > span.hover > i:before {
+		border-radius: 15%;
+	}
 	ul.items li {
 		margin: 6px 0;
 	}
