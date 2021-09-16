@@ -225,7 +225,7 @@ $('.items > li').click(function() {
 		$(this).parent().css('position', 'static');
 		$(this).addClass('selected').hide().css({
 			"top": selectedTop+selectedLetter.height()+selectedOffset,
-			"left": -20,
+			"left": selectedOffsetLeft,
 		}).fadeIn(600).siblings().fadeOut(600);
 
 		let iframeWidth = 510;
