@@ -199,7 +199,7 @@ div.alphabet > span.hover > i:before {
 	left: -1%;
 	background: #fff;
 	box-shadow: -27.5px 27.5px 20px 0px rgba(0, 0, 0, .45);
-	border-radius: 11%;
+	border-radius: 15%;
 }
 div.alphabet > span:last-of-type,
 div.alphabet > span:last-of-type:hover {
@@ -413,10 +413,6 @@ div.subscription-inner .plans > div > span {
 	}
 	div.alphabet > span > i {
 		height: 60px;
-	}
-	div.alphabet > span.selected > i:before,
-	div.alphabet > span.hover > i:before {
-		border-radius: 15%;
 	}
 	ul.items li {
 		margin: 6px 0;
