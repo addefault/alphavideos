@@ -20,7 +20,7 @@ if(screen.availHeight > screen.availWidth) {
 	});	
 }
 let letterIndex;
-let selectedTop = 0;
+let selectedTop = 20;
 if($(window).width() > 1280)
 	selectedTop = 100;
 $(window).on('resize',function(){

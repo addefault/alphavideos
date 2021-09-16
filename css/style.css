@@ -420,7 +420,7 @@ div.subscription-inner .plans > div > span {
 	ul.items {
 	    font-size: 21px;
 	    top: 15px;
-	    left: 12%;
+	    left: 15%;
 	}
 	p.copyright {
 		font-size: 12px;
@@ -428,7 +428,32 @@ div.subscription-inner .plans > div > span {
 }
 @media (max-width: 870px) {
 	div.subscription-inner {
-		padding: 30px 60px;
+	    padding: 20px 40px;
+	    font-size: 13px;
+	}
+	div.subscription-inner > p {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	div.subscription-inner .plans {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	div.subscription-inner .plans > div {
+		height: 110px;
+		margin: 1px 10px;
+	}
+	div.subscription-inner .plans > div:hover, div.subscription-inner .plans > div.selected {
+		margin: 0 9px;
+	}
+	div.subscription-inner .plans > div > p {
+		font-size: 17px;
+	}
+	div.subscription-inner .plans > div > span {
+		font-size: 30px;
+	}
+	.btn {
+		padding: 11px 30px;
 	}
 }
 @media (max-width: 680px) {
