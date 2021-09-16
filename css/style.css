@@ -456,6 +456,45 @@ div.subscription-inner .plans > div > span {
 		padding: 11px 30px;
 	}
 }
+@media (max-height: 350px) {
+	div.subscription-inner .plans {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	div.subscription-inner .plans > div {
+		width: 90px;
+		height: 90px;
+	}
+	div.subscription-inner .plans > div > p {
+		font-size: 15px;
+		margin-bottom: 5px;
+	}
+	div.subscription-inner .plans > div > span {
+		font-size: 25px;
+	}
+}
+@media (max-height: 270px) {
+	div.subscription-inner {
+		padding: 15px 30px;
+		font-size: 12px;
+		overflow: auto;
+	}
+	div.subscription-inner .plans > div > span {
+		font-size: 22px;
+	}
+	div.subscription-inner > p {
+		font-size: 18px;
+		margin-bottom: 6px;
+	}
+	div.subscription-inner .plans > div {
+		width: 80px;
+		height: 80px;
+	}
+	div.subscription-inner .plans > div > p {
+		font-size: 13px;
+		margin-bottom: 4px;
+	}
+}
 @media (max-width: 680px) {
 	/*div.alphabet > span {
 		font-size: 60px;
