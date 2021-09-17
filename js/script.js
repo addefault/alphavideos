@@ -77,6 +77,7 @@ $('.alphabet > span').mouseenter(function() {
 		$(this).addClass('hover').siblings('span.hover').removeClass('hover');
 	}
 });
+let videoHide = false;
 $('.alphabet > span').click(function() {
 	letterIndex = $(this).index('span');
 	if(!$(this).hasClass('selected')) {
@@ -146,7 +147,8 @@ $('.alphabet > span').click(function() {
 	} else {
 		$('ul.items').eq(letterIndex).hide();
 		$('.information, .info-heading').hide();
-		$('.iteminner').html('').hide();
+		videoHide = true;
+		$('.iteminner').fadeOut(600, function() {$(this).html('')});
 		const currentLetter = $(this);
 		currentLetter.css({
 				'transition-property': 'top, left',
@@ -188,7 +190,8 @@ $('.items > li').click(function() {
 	if($(this).hasClass('disabled')) {
 		$('.subscription').css("display", "flex").hide().fadeIn();
 	} else if($(this).hasClass('selected')) {
-		$('.iteminner').html('').fadeOut(600);
+		videoHide = true;
+		$('.iteminner').fadeOut(600, function() {$(this).html('')});
 		$(this).hide().css({
 			"top": $(this).data('top')+$(this).parent().data('top'),
 			"left": $(this).data('left')+$(this).parent().data('left'),
@@ -205,6 +208,7 @@ $('.items > li').click(function() {
 		let selectedLetter = $('.alphabet > span.selected');
 		let selectedOffset = 50;
 		let selectedOffsetLeft = 0;
+		videoHide = false;
 		if($(window).width() < 1024) {
 			selectedOffset = 20;
 			selectedOffsetLeft = -20;
@@ -234,15 +238,17 @@ $('.items > li').click(function() {
 		if($(window).height() < 640)
 			iframeWidth = 400;
 		setTimeout(function() {
-			$('.iteminner').html('<video src="design.mp4" autoplay width="100%"></video>').fadeIn(600);
-			$('video').on("ended", function(){
-				$('.iteminner').html('').hide();
-				$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
-					"position": "static",
-					"top": "auto",
-					"left": "auto",
-				}).fadeIn(600);
-			});	
+			if(!videoHide) {
+				$('.iteminner').html('<video src="design.mp4" autoplay width="100%"></video>').fadeIn(600);
+				$('video').on("ended", function(){
+					$('.iteminner').fadeOut(600, function() {$(this).html('')});
+					$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
+						"position": "static",
+						"top": "auto",
+						"left": "auto",
+					}).fadeIn(600);
+				});		
+			}
 		}, 1750);
 	}
 });
