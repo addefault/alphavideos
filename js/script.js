@@ -208,6 +208,8 @@ $('.items > li').click(function() {
 		if($(window).width() < 1024) {
 			selectedOffset = 20;
 			selectedOffsetLeft = -20;
+		} else {
+			selectedOffsetLeft = $(this).text().length*-2;
 		}
 		$('.items > li').each(function() {
 			$(this).data('top', $(this).position().top);
@@ -225,7 +227,7 @@ $('.items > li').click(function() {
 		$(this).parent().css('position', 'static');
 		$(this).addClass('selected').hide().css({
 			"top": selectedTop+selectedLetter.height()+selectedOffset,
-			"left": selectedOffsetLeft,
+			"left": selectedOffsetLeft
 		}).fadeIn(600).siblings().fadeOut(600);
 
 		let iframeWidth = 510;
@@ -233,15 +235,15 @@ $('.items > li').click(function() {
 			iframeWidth = 400;
 		setTimeout(function() {
 			$('.iteminner').html('<video src="design.mp4" autoplay width="100%"></video>').fadeIn(600);
+			$('video').on("ended", function(){
+				$('.iteminner').html('').hide();
+				$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
+					"position": "static",
+					"top": "auto",
+					"left": "auto",
+				}).fadeIn(600);
+			});	
 		}, 1750);
-		$('video').on("ended", function(){
-			$('.iteminner').html('').hide();
-			$('.items > li.selected').removeClass('selected').parent('.items').css('position', 'absolute').find('li').hide().css({
-				"position": "static",
-				"top": "auto",
-				"left": "auto",
-			}).fadeIn(600);
-		});	
 	}
 });
 $('.plans > div').click(function() {
