@@ -16,6 +16,14 @@
 	font-family: "Bague";
 	src: url(../fonts/Bague.ttf) format("truetype");
 }
+@font-face {
+	font-family: "BigerOver";
+	src: url(../fonts/BigerOver.otf) format("opentype");
+}
+@font-face {
+	font-family: "Oblivious";
+	src: url(../fonts/ObliviousFont.ttf) format("truetype");
+}
 html, body {
 	width: 100%;
 	height: 100%;
@@ -311,32 +319,65 @@ div.subscription-inner .plans {
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
+div.subscription-inner a {
+	text-decoration: none;
+	color: inherit;
+}
 div.subscription-inner .plans > div {
-	height: 170px;
-	width: 120px;
-	border: 1px solid #6a6a6a;
-	background: #494949;
-	box-shadow: -10px 10px 60px 0px rgba(0, 0, 0, .4);
+	height: 340px;
+	width: 198px;
+	background-image: url(../images/planbg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	box-shadow: 15px 25px 20px 0px rgba(0, 0, 0, .5);
 	border-radius: 15px;
-	margin: 1px 14px;
+	margin: 0 6px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	cursor: pointer;
 	user-select: none;
+	box-sizing: border-box;
+	padding: 4% 0;
+	color: #fdbf00;
 }
-div.subscription-inner .plans > div:hover,
-div.subscription-inner .plans > div.selected {
-	border: 2px solid #29b000;
-	margin: 0 13px;
+div.subscription-inner .plans > div:first-child {
+	color: #fcfbfd;
 }
-div.subscription-inner .plans > div > p {
-	font-size: 20px;
-	font-weight: 800;
+div.subscription-inner .plans > div:last-child {
+	color: #9668fc;
+}
+div.subscription-inner .plans p {
+	font-size: 25px;
 	margin-bottom: 8px;
+	letter-spacing: 0.1em;
+	font-family: "BigerOver";
+	text-shadow: 11px 5px 3px rgba(0,0,0,.5);
+	padding: 0 10px;
+}
+div.subscription-inner .plans > div > div {
+	padding: 0 10px;
+}
+div.subscription-inner .plans > div > div > span:first-child {
+	font-size: 20px;
+	text-shadow: 6px 5px 3px rgba(0,0,0,.5);
+}
+div.subscription-inner .plans > div > div > span:last-child {
+	display: block;
+	font-size: 55px;
+	margin-top: 20px;
+	text-shadow: 15px 8px 3px rgba(0,0,0,.5);
 }
 div.subscription-inner .plans > div > span {
-	font-size: 36px;
+	display: block;
+	text-align: right;
+	color: #95c95a;
+	font-size: 24px;
+	text-shadow: 8px 4px 3px rgba(0,0,0,.5);
+	padding: 0 21%;
+}
+div.subscription-inner .plans span {
+	font-family: "Oblivious";
 }
 .btn {
 	color: inherit;
@@ -351,24 +392,6 @@ div.subscription-inner .plans > div > span {
 }
 .btn.btn--gray {
 	background: #494949;
-}
-@media (max-height: 580px) {
-	div.alphabet > span {
-		height: 130px;
-		line-height: 130px;
-	}
-	div.alphabet > span > i {
-		height: 130px;
-	}
-	p.copyright {
-		bottom: 20px;
-	}
-	body {
-		align-items: flex-start;
-	}
-	.alphabet {
-		margin-top: 20px;
-	}
 }
 @media (min-width: 1366px) {
 	div.alphabet {
@@ -428,71 +451,110 @@ div.subscription-inner .plans > div > span {
 }
 @media (max-width: 870px) {
 	div.subscription-inner {
-	    padding: 20px 40px;
-	    font-size: 13px;
-	}
-	div.subscription-inner > p {
-		font-size: 20px;
-		margin-bottom: 10px;
-	}
-	div.subscription-inner .plans {
-		margin-top: 30px;
-		margin-bottom: 30px;
-	}
-	div.subscription-inner .plans > div {
-		height: 110px;
-		margin: 1px 10px;
-	}
-	div.subscription-inner .plans > div:hover, div.subscription-inner .plans > div.selected {
-		margin: 0 9px;
-	}
-	div.subscription-inner .plans > div > p {
-		font-size: 17px;
-	}
-	div.subscription-inner .plans > div > span {
-		font-size: 30px;
+		padding-left: 60px;
+		padding-right: 60px;
 	}
 	.btn {
 		padding: 11px 30px;
 	}
 }
-@media (max-height: 350px) {
-	div.subscription-inner .plans {
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
+@media (max-height: 640px), (max-width: 640px) and (orientation: portrait) {
 	div.subscription-inner .plans > div {
-		width: 90px;
-		height: 90px;
+		width: 155px;
+		height: 265px;
 	}
-	div.subscription-inner .plans > div > p {
-		font-size: 15px;
-		margin-bottom: 5px;
+	div.subscription-inner .plans p {
+		font-size: 20px;
+	}
+	div.subscription-inner .plans > div > div > span:first-child {
+		font-size: 16px;
+	}
+	div.subscription-inner .plans > div > div > span:last-child {
+		font-size: 44px;
 	}
 	div.subscription-inner .plans > div > span {
-		font-size: 25px;
+		font-size: 20px;
 	}
 }
-@media (max-height: 270px) {
+@media (max-height: 550px), (max-width: 550px) and (orientation: portrait) {
+	div.subscription-inner .plans > div {
+		width: 145px;
+		height: 200px;
+		padding: 4% 0 3%;
+	}
+	div.subscription-inner .plans p {
+		font-size: 16px;
+	}
+	div.subscription-inner .plans > div > div > span:first-child {
+		font-size: 14px;
+	}
+	div.subscription-inner .plans > div > div > span:last-child {
+		font-size: 37px;
+	}
+	div.subscription-inner .plans > div > span {
+		font-size: 17px;
+	}
+}
+@media (max-height: 580px), (max-width: 580px) and (orientation: portrait) {
+	div.alphabet > span {
+		height: 130px;
+		line-height: 130px;
+	}
+	div.alphabet > span > i {
+		height: 130px;
+	}
+	p.copyright {
+		bottom: 20px;
+	}
+	body {
+		align-items: flex-start;
+	}
+	.alphabet {
+		margin-top: 20px;
+	}
+}
+@media (max-height: 470px), (max-width: 470px) and (orientation: portrait) {
+	div.subscription-inner {
+		padding: 20px 80px;
+	}
+	div.subscription-inner .plans {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	div.subscription-inner .plans > div > div > span:last-child {
+		margin-top: 12px;
+		font-size: 30px;
+	}
+	div.subscription-inner > p {
+		margin-bottom: 8px;
+	}
+}
+@media (max-height: 350px), (max-width: 350px) and (orientation: portrait) {
+	div.subscription-inner .plans > div {
+		width: 110px;
+		height: 140px;
+		padding: 4% 0 2%;
+	}
+	div.subscription-inner .plans p {
+		font-size: 13px;
+		margin-bottom: 0;
+	}
+	div.subscription-inner .plans > div > div > span:first-child {
+		font-size: 11px;
+	}
+	div.subscription-inner .plans > div > div > span:last-child {
+		margin-top: 7px;
+		font-size: 22px;
+	}
+	div.subscription-inner .plans > div > span {
+		font-size: 14px;
+	}
+}
+@media (max-height: 270px), (max-width: 270px) and (orientation: portrait) {
 	div.subscription-inner {
 		padding: 15px 30px;
 		font-size: 12px;
 		overflow: auto;
-	}
-	div.subscription-inner .plans > div > span {
-		font-size: 22px;
-	}
-	div.subscription-inner > p {
-		font-size: 18px;
-		margin-bottom: 6px;
-	}
-	div.subscription-inner .plans > div {
-		width: 80px;
-		height: 80px;
-	}
-	div.subscription-inner .plans > div > p {
-		font-size: 13px;
-		margin-bottom: 4px;
 	}
 }
 @media (max-width: 680px) {
@@ -542,12 +604,6 @@ div.subscription-inner .plans > div > span {
 	    top: 15px;
 	    left: 12%;
 	}*/
-	div.subscription-inner .plans > div {
-		margin: 1px 4px;
-	}
-	div.subscription-inner .plans > div:hover, div.subscription-inner .plans > div.selected {
-		margin: 0 3px;
-	}
 	.btn {
 		margin-top: 10px;
 	}
@@ -569,15 +625,6 @@ div.subscription-inner .plans > div > span {
 	ul.items {
 	    font-size: 20px;
 	}*/
-	div.subscription-inner .plans > div > p {
-		font-size: 17px;
-	}
-	div.subscription-inner .plans > div > span {
-		font-size: 33px;
-	}
-	div.subscription-inner .plans > div {
-		width: 130px;
-	}
 }
 @media (max-width: 420px) {
 	div.alphabet {
