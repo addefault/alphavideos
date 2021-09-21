@@ -189,6 +189,12 @@ $('.alphabet > span').click(function() {
 $('.items > li').click(function() {
 	if($(this).hasClass('disabled')) {
 		$('.subscription').css("display", "flex").hide().fadeIn();
+		$('.subscription').click(function(e){
+			if($(e.target).closest('.subscription-inner').length) 
+				return;
+			$('.subscription').fadeOut();
+			e.stopPropagation();
+		});
 	} else if($(this).hasClass('selected')) {
 		videoHide = true;
 		$('.iteminner').fadeOut(600, function() {$(this).html('')});
