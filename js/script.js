@@ -189,6 +189,16 @@ $('.alphabet > span').click(function() {
 $('.items > li').click(function() {
 	if($(this).hasClass('disabled')) {
 		$('.subscription').css("display", "flex").hide().fadeIn();
+		$('.plans > div').css('opacity', 0);
+		$('.plans > div').each(function() {
+			let plan = $(this);
+			setTimeout(function() {
+				plan.animate({
+					'opacity': 1
+				}, 1000);	
+			}, 500+plan.index()*200);
+			
+		});
 		$('.subscription').click(function(e){
 			if($(e.target).closest('.subscription-inner').length) 
 				return;
