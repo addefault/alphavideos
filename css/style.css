@@ -475,10 +475,9 @@ div.subscription-inner .plans span {
 		padding: 11px 30px;
 	}
 }
-@media (max-height: 640px), (max-width: 640px) and (orientation: portrait) {
+@media (max-height: 550px), (max-width: 550px) and (orientation: portrait) {
 	div.subscription-inner .plans > div {
-		width: 155px;
-		height: 265px;
+		padding: 4% 0 3%;
 	}
 	div.subscription-inner .plans p {
 		font-size: 20px;
@@ -493,57 +492,41 @@ div.subscription-inner .plans span {
 		font-size: 20px;
 	}
 }
-@media (max-height: 550px), (max-width: 550px) and (orientation: portrait) {
+@media (max-height: 470px), (max-width: 470px) and (orientation: portrait) {
+	div.subscription-inner {
+		padding: 20px 20px;
+	}
 	div.subscription-inner .plans > div {
-		width: 145px;
-		height: 200px;
-		padding: 4% 0 3%;
+		width: 160px;
+		height: 240px;
 	}
 	div.subscription-inner .plans p {
-		font-size: 16px;
+		font-size: 18px;
 	}
 	div.subscription-inner .plans > div > div > span:first-child {
 		font-size: 14px;
 	}
 	div.subscription-inner .plans > div > div > span:last-child {
-		font-size: 37px;
+		font-size: 36px;
 	}
 	div.subscription-inner .plans > div > span {
-		font-size: 17px;
+		font-size: 18px;
 	}
 }
-@media (max-height: 470px), (max-width: 470px) and (orientation: portrait) {
-	div.subscription-inner {
-		padding: 20px 20px;
-	}
-	div.subscription-inner .plans {
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-	div.subscription-inner .plans > div > div > span:last-child {
-		margin-top: 12px;
-		font-size: 30px;
-	}
-	div.subscription-inner > p {
-		margin-bottom: 8px;
-	}
-}
-@media (max-height: 350px), (max-width: 350px) and (orientation: portrait) {
+@media (max-height: 370px), (max-width: 370px) and (orientation: portrait) {
 	div.subscription-inner .plans > div {
-		width: 110px;
-		height: 140px;
-		padding: 4% 0 2%;
+		width: 125px;
+		height: 170px;
 	}
 	div.subscription-inner .plans p {
-		font-size: 13px;
-		margin-bottom: 0;
+		font-size: 14px;
 	}
 	div.subscription-inner .plans > div > div > span:first-child {
 		font-size: 11px;
 	}
 	div.subscription-inner .plans > div > div > span:last-child {
-		margin-top: 7px;
-		font-size: 22px;
+		font-size: 28px;
+		margin-top: 10px;
 	}
 	div.subscription-inner .plans > div > span {
 		font-size: 14px;
@@ -551,8 +534,6 @@ div.subscription-inner .plans span {
 }
 @media (max-height: 270px), (max-width: 270px) and (orientation: portrait) {
 	div.subscription-inner {
-		padding: 15px 20px;
-		font-size: 12px;
 		overflow: auto;
 	}
 }
