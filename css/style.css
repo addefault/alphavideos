@@ -296,12 +296,11 @@ div.popup {
 	align-items: center;
 }
 div.subscription-inner {
-	padding: 60px 160px;
+	padding: 20px;
 	max-width: 90%;
 	max-height: 90%;
 	border-radius: 40px;
-	background: #2c2c2c;
-	box-shadow: -10px 10px 60px 0px rgba(0, 0, 0, .4);
+	background: transparent;
 	text-align: center;
 	color: #fff;
 	font-family: "Open Sans";
@@ -469,8 +468,8 @@ div.subscription-inner .plans span {
 }
 @media (max-width: 870px) {
 	div.subscription-inner {
-		padding-left: 60px;
-		padding-right: 60px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	.btn {
 		padding: 11px 30px;
@@ -515,7 +514,7 @@ div.subscription-inner .plans span {
 }
 @media (max-height: 470px), (max-width: 470px) and (orientation: portrait) {
 	div.subscription-inner {
-		padding: 20px 80px;
+		padding: 20px 20px;
 	}
 	div.subscription-inner .plans {
 		margin-top: 20px;
@@ -552,7 +551,7 @@ div.subscription-inner .plans span {
 }
 @media (max-height: 270px), (max-width: 270px) and (orientation: portrait) {
 	div.subscription-inner {
-		padding: 15px 30px;
+		padding: 15px 20px;
 		font-size: 12px;
 		overflow: auto;
 	}
