@@ -516,7 +516,7 @@ div.subscription-inner .plans span {
 @media (max-height: 370px), (max-width: 370px) and (orientation: portrait) {
 	div.subscription-inner .plans > div {
 		width: 125px;
-		height: 170px;
+		height: 190px;
 	}
 	div.subscription-inner .plans p {
 		font-size: 14px;
